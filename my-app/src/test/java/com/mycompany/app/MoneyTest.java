@@ -7,12 +7,37 @@ import org.junit.Test;
 public class MoneyTest {
 
 	@Test
-	public void testMultiplication() {
+	public void testMultiplicationDollar() {
 		Dollar five = new Dollar(5);
-		five.times(2);
-		assertEquals(10,five.amount, 00.001);
+		Dollar product = five.times(2);
+		assertEquals(new Dollar(10), product);
+		
+		product = five.times(3);
+		assertEquals(new Dollar(15), product);
 	}
 	
+	@Test
+	public void testEqualityDollar() {
+		assertEquals(new Dollar(5), new Dollar(5));
+		assertNotEquals(new Dollar(5), new Dollar(8));
+	}
+	
+	@Test
+	public void testMultiplicationFranc() {
+		Franc five = new Franc(5);
+		Franc product = five.times(2);
+		assertEquals(new Franc(10), product);
+		
+		product = five.times(3);
+		assertEquals(new Franc(15), product);
+	}
+	
+	@Test
+	public void testEqualityFranc() {
+		assertEquals(new Franc(5), new Franc(5));
+		assertNotEquals(new Franc(5), new Franc(8));
+		assertNotEquals(new Franc(5), new Dollar(5));
+	}
 	
 
 }
