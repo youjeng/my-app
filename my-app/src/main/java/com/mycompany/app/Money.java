@@ -1,21 +1,22 @@
 package com.mycompany.app;
 
-public class Money {
+public abstract class Money {
 	
 	protected float amount;
 	
-	public Money() {
-		
+	public abstract Money times(float multiplier);
+	
+	public static Money dollar(float amount) {
+		return new Dollar(amount);
 	}
 	
-	public Money(float amount) {
-		this.amount = amount;
+	public static Money franc(float amount) {
+		return new Franc(amount);
 	}
 
-	
 	public boolean equals(Object object) {
 		Money money = (Money) object;
 		return amount == money.amount
-				&& getClass().equals(object.getClass());
+				&& this.getClass().equals(object.getClass());
 	}
 }
