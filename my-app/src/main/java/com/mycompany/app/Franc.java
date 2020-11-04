@@ -1,13 +1,13 @@
 package com.mycompany.app;
 
 public class Franc extends Money {
-
-	public Franc(float amount) {
-		this.amount = amount;
+	
+	public Franc(float amount, String currency) {
+		super(amount, currency);
 	}
 	
 	public Money times(float multiplier) {
-		return new Franc(amount * multiplier);	
+		return Money.franc(amount * multiplier);	
 	}
 
 }

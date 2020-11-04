@@ -2,13 +2,15 @@ package com.mycompany.app;
 
 public class Dollar extends Money {
 	
-	public Dollar(float amount) {
-		this.amount = amount;
+	
+	public Dollar(float amount, String currency ) {
+		super(amount, currency);
 	}
 	
 	public Money times(float multiplier) {
 		
-		return new Dollar(amount * multiplier); 
+		return Money.dollar(amount * multiplier); 
 		
 	}
+
 }
