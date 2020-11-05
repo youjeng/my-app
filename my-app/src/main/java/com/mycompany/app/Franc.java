@@ -5,9 +5,5 @@ public class Franc extends Money {
 	public Franc(float amount, String currency) {
 		super(amount, currency);
 	}
-	
-	public Money times(float multiplier) {
-		return Money.franc(amount * multiplier);	
-	}
 
 }
