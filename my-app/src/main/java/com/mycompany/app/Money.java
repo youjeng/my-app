@@ -16,11 +16,11 @@ public class Money {
 	
 	
 	public static Money dollar(float amount) {
-		return new Dollar(amount, "USD");
+		return new Money(amount, "USD");
 	}
 	
 	public static Money franc(float amount) {
-		return new Franc(amount, "CHF");
+		return new Money(amount, "CHF");
 	}
 
 	public boolean equals(Object object) {
